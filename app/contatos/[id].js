@@ -13,6 +13,7 @@ export default function EditarContato() {
 
   useEffect(() => {
     const fetchData = async () => {
+      
       const { data } = await api.get(`/contatos/${contatoId}`);
       setContato(data);
     };

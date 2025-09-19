@@ -39,9 +39,9 @@ export default function ListaContatos() {
 
       <FlatList
         data={contatos}
-        keyExtractor={(item) => String(item.id)}
+        keyExtractor={(item) => String(item._id)}
         renderItem={({ item }) => (
-          <TouchableOpacity onPress={() => router.push(`/contatos/${item.id}`)} style={{ paddingVertical: 8 }}>
+          <TouchableOpacity onPress={() => router.push(`/contatos/${item._id}`)} style={{ paddingVertical: 8 }}>
             <Text style={{ fontWeight: 'bold' }}>{item.nome}</Text>
             {item.foto ? (
               <Image
@@ -49,7 +49,7 @@ export default function ListaContatos() {
   			style={{ width: 100, height: 100, marginVertical: 6 }}
 		  />
             ) : null}
-            <Button title="Excluir" onPress={() => excluir(item.id)} />
+            <Button title="Excluir" onPress={() => excluir(item._id)} />
           </TouchableOpacity>
         )}
       />
